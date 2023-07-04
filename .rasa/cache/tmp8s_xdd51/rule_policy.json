@@ -1,0 +1,72 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"date_time\"}}]": "action_date_time_submit",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"date_time\"}}, {\"prev_action\": {\"action_name\": \"action_date_time_submit\"}, \"user\": {\"intent\": \"date_time\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}]": "utter_for_thank_you",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"utter_for_thank_you\"}, \"user\": {\"intent\": \"deny\"}}]": "action_reset_slot1",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"utter_for_thank_you\"}, \"user\": {\"intent\": \"deny\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slot1\"}, \"user\": {\"intent\": \"deny\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}]": "utter_for_order_id",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]": "place_order_submit",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_reset_slot",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slot\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_location_data\"}, \"slots\": {\"change_flow\": [1.0, 0.0]}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"exit\"}}]": "action_reset_slot1",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"exit\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slot1\"}, \"user\": {\"intent\": \"exit\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"affirm\"}}]": "action_date_time",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"affirm\"}}, {\"prev_action\": {\"action_name\": \"action_date_time\"}, \"user\": {\"intent\": \"affirm\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"userDetails_form\"}}]": "form_registration_submit",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"userDetails_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"form_registration_submit\"}}]": "action_payemnt_info",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"userDetails_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"form_registration_submit\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_payemnt_info\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Nooo\"}}]": "utter_thanks_registration",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Nooo\"}}, {\"prev_action\": {\"action_name\": \"utter_thanks_registration\"}, \"user\": {\"intent\": \"Nooo\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"userDetails_form\"}, \"prev_action\": {\"action_name\": \"userDetails_form\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]": "place_order_submit",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_reset_slot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slot\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}]": "utter_for_order_id",
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]": "place_order_submit",
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_reset_slot",
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slot\"}, \"user\": {\"intent\": \"confirm\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "userDetails_form"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"active_loop\": {\"name\": \"userDetails_form\"}, \"prev_action\": {\"action_name\": \"userDetails_form\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"date_time\"}}, {\"prev_action\": {\"action_name\": \"action_date_time_submit\"}, \"user\": {\"intent\": \"date_time\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "handling active loops and forms - userDetails_form",
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "predicting default action with intent back",
+      "handling active loops and forms - userDetails_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slot\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"date_time\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"submit_date_api\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slot\"}, \"user\": {\"intent\": \"confirm\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_date_time_submit\"}}, {\"prev_action\": {\"action_name\": \"utter_for_order_id\"}}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"place_order_submit\"}, \"user\": {\"intent\": \"confirm\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slot\"}, \"user\": {\"intent\": \"confirm\"}}]"
+    ]
+  }
+}

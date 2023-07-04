@@ -1,0 +1,437 @@
+version: "3.1"
+
+stories:
+
+- story: greet
+  steps:
+  - intent: greet
+  - action: action_hello_world
+  - intent: digit
+  - action: action_product_list
+  - intent: alphabet
+    entities:
+    - alpha: 'C'
+  - slot_was_set:
+    - alpha: 'C'
+  - action: action_get_product_id
+  - intent: quantity_order
+    entities:
+    - quantity:  "1 units"    
+  - slot_was_set:
+    - quantity: '1 units'
+  - action: action_order_quantity
+  - slot_was_set:
+    - quantity: null
+  - intent: locationdata
+    entities:
+    - lat: '24.802237305671'
+    - long: '46.729334145784'
+    - mob_num: '915498928283'
+  - slot_was_set:
+    - lat: '24.802237305671'
+  - slot_was_set:
+    - long: '46.729334145784'
+  - slot_was_set:
+    - mob_num: '915498928283'
+  - action: action_location_data
+  - slot_was_set:
+    - change_flow: false
+  
+  
+ 
+
+  
+# - story: sad_story_story_1
+#   steps:
+#   - intent: randome_intent
+#   - action: utter_wrong_vendor
+   
+# - story: sad_story_story_2
+#   steps:
+#   - intent: false_product
+#   - action: utter_wrong_product
+  
+
+
+- story: story_3
+  steps:
+  - intent: greet
+  - action: action_hello_world
+  - intent: digit
+  - action: action_product_list
+  - intent: alphabet
+    entities:
+    - alpha: 'B'
+  - slot_was_set:
+    - alpha: 'B'
+  - action: action_get_product_id
+  - intent: quantity_order
+    entities:
+    - quantity: '4 units'
+  - slot_was_set:
+    - quantity: '4 units'
+  - action: action_order_quantity
+  - slot_was_set:
+    - quantity: null
+  - intent: locationdata
+    entities:
+    - lat: '24.802237305671'
+    - long: '46.729334145784'
+    - mob_num: '915498928283'
+  - slot_was_set:
+    - lat: '24.802237305671'
+  - slot_was_set:
+    - long: '46.729334145784'
+  - slot_was_set:
+    - mob_num: '915498928283'
+  - action: action_location_data
+  - slot_was_set:
+    - change_flow: true
+  - action: check_for_registration
+
+  
+
+
+ 
+
+
+- story: story1
+  steps:
+  - intent: greet
+  - action: action_hello_world
+  - intent: digit
+  - action: action_product_list
+  - intent: alphabet
+    entities:
+    - alpha: 'B'
+  - slot_was_set:
+    - alpha: 'B'
+  - action: action_get_product_id
+  - intent: quantity_order
+    entities:
+    - quantity: '5 units'
+  - slot_was_set:
+    - quantity: '5 units'
+  - action: action_order_quantity
+  - slot_was_set:
+    - quantity: null
+  - intent: locationdata
+    entities:
+    - lat: '24.802237305671'
+    - long: '46.729334145784'
+    - mob_num: '915498928283'
+  - slot_was_set:
+    - lat: '24.802237305671'
+  - slot_was_set:
+    - long: '46.729334145784'
+  - slot_was_set:
+    - mob_num: '915498928283'
+  - action: action_location_data
+  - slot_was_set:
+    - change_flow:  true
+  - action: check_for_registration
+
+
+
+
+
+
+
+
+- story: user
+  steps:  
+  - intent: affirm
+  - action: action_date_time
+
+
+
+
+- story: sad_story_quntity_33
+  steps:
+  - action: action_get_product_id
+  - intent: alphabet
+  - action: utter_wrong_quentity
+
+- story: story_9
+  steps:
+  - intent: greet
+  - action: action_hello_world
+  - intent: digit
+  - action: action_product_list
+  - intent: alphabet
+    entities:
+    - alpha: C
+  - slot_was_set:
+    - alpha: C
+  - action: action_get_product_id
+  - slot_was_set:
+    - alpha: null
+  - intent: quantity_order
+    entities:
+    - quantity: '1'
+  - slot_was_set:
+    - quantity: '1'
+  - action: action_order_quantity
+  - slot_was_set:
+    - quantity: null
+  - intent: locationdata
+    entities:
+    - lat: '24.802237305671'
+    - long: '46.729334145784'
+    - mob_num: '915498928283'
+  - slot_was_set:
+    - lat: '24.802237305671'
+  - slot_was_set:
+    - long: '46.729334145784'
+  - slot_was_set:
+    - mob_num: '915498928283'
+  - action: action_location_data
+  - slot_was_set:
+    - change_flow: true  
+  - action: check_for_registration
+  - slot_was_set:
+    - change_flow1: false 
+  - action: userDetails_form
+  - active_loop: userDetails_form
+  - slot_was_set:
+    - mob_num: '1732489328'
+  - slot_was_set:
+    - requested_slot: fName
+  - slot_was_set:
+    - fName: amol
+  - slot_was_set:
+    - fName: amol
+  - slot_was_set:
+    - requested_slot: lName
+  - slot_was_set:
+    - lName: dabhade
+  - slot_was_set:
+    - lName: dabhade
+  - slot_was_set:
+    - requested_slot: email_id
+  - slot_was_set:
+    - email_id: amoldabhade@gmail.com
+  - slot_was_set:
+    - email_id: amoldabhade@gmail.com
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: form_registration_submit
+  - action: action_payemnt_info
+
+
+
+
+
+- story: nooo
+  steps:  
+  - intent: Nooo
+  - action: utter_thanks_registration
+
+
+- story: deny
+  steps:
+  - intent: deny
+  - action: utter_for_thank_you
+  - action: action_reset_slot1
+# - story: story10
+#   steps:  
+#   - action: utter_for_order_id
+#   - intent: confirm
+
+
+
+- story: story6
+  steps:
+  - intent: greet
+  - action: action_hello_world
+  - intent: digit
+  - action: action_product_list
+  - intent: alphabet
+    entities:
+    - alpha: A
+  - slot_was_set:
+    - alpha: A
+  - action: action_get_product_id
+  - slot_was_set:
+    - alpha: null
+  - intent: quantity_order
+    entities:
+    - quantity: '1'
+  - slot_was_set:
+    - quantity: '1'
+  - action: action_order_quantity
+  - slot_was_set:
+    - quantity: null
+  - intent: locationdata
+    entities:
+    - lat: '24.802237305671'
+    - long: '46.729334145784'
+    - mob_num: '915498928283'
+  - slot_was_set:
+    - lat: '24.802237305671'
+  - slot_was_set:
+    - long: '46.729334145784'
+  - slot_was_set:
+    - mob_num: '915498928283'
+  - action: action_location_data
+  - slot_was_set:
+    - change_flow: true  
+  - action: check_for_registration
+  - slot_was_set:
+    - change_flow1: false 
+  - action: userDetails_form
+  - active_loop: userDetails_form
+  - slot_was_set:
+    - mob_num: '4321123123'
+  - slot_was_set:
+    - requested_slot: fName
+  - slot_was_set:
+    - fName: drishti
+  - slot_was_set:
+    - fName: drishti
+  - slot_was_set:
+    - requested_slot: lName
+  - slot_was_set:
+    - lName: laalpurwala
+  - slot_was_set:
+    - lName: laalpurwala
+  - slot_was_set:
+    - requested_slot: email_id
+  - slot_was_set:
+    - email_id: drishitilaalpurewala@gmail.com
+  - slot_was_set:
+    - email_id: drishitilaalpurewala@gmail.com
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: form_registration_submit
+  - action: action_payemnt_info
+
+
+- story: new_user123123
+  steps:  
+  - intent: affirm
+  - action: action_date_time
+
+  
+
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: action_hello_world
+  - intent: digit
+  - action: action_product_list
+  - intent: alphabet
+    entities:
+    - alpha: B
+  - slot_was_set:
+    - alpha: B
+  - action: action_get_product_id
+  - slot_was_set:
+    - alpha: null
+  - intent: quantity_order
+    entities:
+    - quantity: '1'
+  - slot_was_set:
+    - quantity: '1'
+  - action: action_order_quantity
+  - slot_was_set:
+    - quantity: null
+  - intent: locationdata
+    entities:
+    - lat: '24.802237305671'
+    - long: '46.729334145784'
+    - mob_num: '915498928283'
+  - slot_was_set:
+    - lat: '24.802237305671'
+  - slot_was_set:
+    - long: '46.729334145784'
+  - slot_was_set:
+    - mob_num: '915498928283'
+  - action: action_location_data
+  - slot_was_set:
+    - change_flow: true 
+  - action: check_for_registration
+  - slot_was_set:
+    - change_flow1: false 
+  - action: userDetails_form
+  - active_loop: userDetails_form
+  - slot_was_set:
+    - mob_num: '6459871232'
+  - slot_was_set:
+    - requested_slot: fName
+  - slot_was_set:
+    - fName: amir
+  - slot_was_set:
+    - fName: amir
+  - slot_was_set:
+    - requested_slot: lName
+  - slot_was_set:
+    - lName: pathan
+  - slot_was_set:
+    - lName: pathan
+  - slot_was_set:
+    - requested_slot: email_id
+  - slot_was_set:
+    - email_id: amirpathan@gmail.com
+  - slot_was_set:
+    - email_id: amirpathan@gmail.com
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: form_registration_submit
+  - action: action_payemnt_info
+
+
+
+
+
+- story: Exit
+  steps:
+  - intent: exit
+  - action: action_reset_slot1
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: action_hello_world
+  - intent: digit
+  - action: action_product_list
+  - intent: alphabet
+    entities:
+    - alpha: A
+  - slot_was_set:
+    - alpha: A
+  - action: action_get_product_id
+  - slot_was_set:
+    - alpha: null
+  - intent: quantity_order
+    entities:
+    - quantity: '1'
+  - slot_was_set:
+    - quantity: '1'
+  - action: action_order_quantity
+  - slot_was_set:
+    - quantity: null
+  - intent: locationdata
+    entities:
+    - long: '24.801971911641'
+    - long: '46.723058447242'
+    - mob_num: '918669186141'
+  - slot_was_set:
+    - long: '46.723058447242'
+  - slot_was_set:
+    - mob_num: '918669186141'
+  - intent: locationdata
+    entities:
+    - lat: '24.801971911641'
+    - long: '46.723058447242'
+    - mob_num: '918669186141'
+  - action: action_location_data
+  - slot_was_set:
+    - change_flow: true
+  - action: check_for_registration

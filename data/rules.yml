@@ -1,0 +1,93 @@
+version: "3.1"
+
+rules:
+
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: deny
+  steps:
+  - intent: deny
+  - action: utter_for_thank_you
+  - action: action_reset_slot1
+
+
+- rule: Exit
+  steps:
+  - intent: exit
+  - action: action_reset_slot1
+
+
+
+  
+- rule: Activate form
+  steps:  
+  - action: userDetails_form
+  - active_loop: userDetails_form
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+    - active_loop: userDetails_form
+  steps:
+  # Form is deactivated
+  - action: userDetails_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+ 
+  - action: form_registration_submit
+  - action: action_payemnt_info
+
+- rule: new_user4534
+  steps:   
+  - intent: affirm
+  - action: action_date_time
+
+- rule: false4534
+  steps:   
+  - action: action_location_data
+  - slot_was_set:
+    - change_flow: false
+ 
+
+- rule: new_usernooo
+  steps:  
+  - intent: Nooo
+  - action: utter_thanks_registration
+
+- rule: new_342423user
+  steps:  
+  - action: action_date_time_submit
+  - action: utter_for_order_id
+  - intent: confirm
+  - action: place_order_submit
+  - action: action_reset_slot
+
+- rule: new_userdatetime
+  steps:  
+  - intent: date_time
+  - action: action_date_time_submit
+
+- rule: user
+  steps:   
+  - action: submit_date_api
+  - action: utter_for_order_id
+  - intent: confirm
+  - action: place_order_submit
+  - action: action_reset_slot
+
+- rule: confirm
+  steps:  
+  - intent: confirm
+  - action: place_order_submit
+  - action: action_reset_slot
+

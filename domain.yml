@@ -1,0 +1,193 @@
+version: '3.1'
+intents:
+- Nooo
+- affirm
+- alphabet
+- bot_challenge
+- confirm
+- date_time
+- deny
+- digit
+- email
+- exit
+- false_product
+- first_name
+- goodbye
+- greet
+- last_name
+- locationdata
+- mobile_number
+- mood_great
+- mood_unhappy
+- order_request
+- otp
+- quantity_order
+- randome_intent
+- request_restaurant
+- serial_number
+entities:
+- quantity
+- alpha
+- long
+- lat
+- mob_num
+- email_id
+- fName
+- lName
+- Digit
+- Number
+- mobile_num
+slots:
+  lat:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: lat
+  long:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: long
+  change_flow:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: custom
+  change_flow1:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: custom
+  quantity:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: quantity
+  alpha:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: alpha
+  mob_num:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      auto_fill: false
+      entity: mob_num
+  fName:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      auto_fill: false
+      conditions:
+      - active_loop: userDetails_form
+        requested_slot: fName
+  lName:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      auto_fill: false
+      conditions:
+      - active_loop: userDetails_form
+        requested_slot: lName
+  email_id:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      auto_fill: false
+      entity: email_id
+      conditions:
+      - active_loop: userDetails_form
+        requested_slot: email_id
+forms:
+  userDetails_form:
+    required_slots:
+    - fName
+    - lName
+    - email_id
+responses:
+  utter_wrong_vendor:
+  - text: Please select serial number.
+  utter_wrong_product:
+  - text: Please select correct time.
+  utter_wrong_quentity:
+  - text: Please select correct quentity Ex. *2 units*.
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_goodbye:
+  - text: You have been a great customer! Thank you so much!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_fName:
+  - text: Please enter your first name.
+  utter_ask_lName:
+  - text: Please enter your last name.
+  utter_ask_email_id:
+  - text: Please enter your email.
+  utter_confirmation:
+  - text: Thanks for registering with us, Click Next to proceed further?
+  utter_wrong_confirm:
+  - text: thanks for registration
+  utter_ask_userNumber_form_Digit:
+  - text: Enter serial number.
+  utter_place_confirm:
+  - text: Your order has been placed successfully. Thanks for visiting.
+  utter_correct_input:
+  - text: please enter serial number
+  utter_thanks_registration:
+  - text: Thanks for Registration.
+  utter_submit:
+  - text: Thanks for information!
+  utter_for_thank_you:
+  - text: We appreciate your visit, but you have not placed an order.
+  utter_location:
+  - text: '*Please* *share* *your* *location*.'
+  utter_for_order_id:
+  - text: Are you sure, you want to place an order?
+    buttons:
+    - title: Yes
+      payload: CONFIRM
+    - title: No
+      payload: No
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- action_hello_world
+- action_check_auth
+- utter_for_order_id
+- action_product_list
+- action_date_time_submit
+- action_get_product_id
+- check_for_registration
+- action_reset_slot
+- place_order_submit
+- action_location_data
+- submit_date_api
+- action_date_time
+- action_order_quantity
+- form_registration_submit
+- action_payemnt_info
+- utter_for_thank_you
+- action_reset_slot1
+- action_check_auth_1
+- action_check_date_time
+- action_check_otp
+- action_check_user
+- action_confirm
+- action_email_id
+- action_first_last_name
+- action_order_confirm
+- action_timedate
+- submit_message
+- utter_confirmation
+- validate_userDetails_form
